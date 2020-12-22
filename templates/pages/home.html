@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<div class="white-text-container background-image-container" style="background-image: url('static/img/images/img-home.jpg'); background-position: 100% 100%; background-size: cover;">
+    <div class="opacity"></div>
+    <div class="container">
+        <div class="row">
+           
+            <div class="col-md-6">
+                <h1 style="font-size: 53px;">Newborn Lying-In</h1>
+                <p style="font-size: 15px">Providing safe, relieable and excellent medical services to the general community.</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="section-container border-section-container">
+    <div class="container">
+            <div class="row">
+                <div class="col-md-12 section-container-spacer">
+                    <div class="text-center">
+                        <h2>What our team does</h2>
+                        <p> We, the Newborn Lying-In has a mission to give the patients the best experience and services who seek immediate medical attention.  </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="fa-container">
+                        <i class="fa fa-comment-o fa-3x" aria-hidden="true"></i>
+                    </div>
+                    <div class="text-center">
+                        <h3>Communicate with us</h3>
+                    </div>
+                    <div>
+                        {% for comm in  home_comm %}
+                            <p>{{ comm.home_comm_paragraph }}</p>
+                        {% endfor %}    
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="fa-container">
+                        <i class="fa fa-heart-o fa-3x" aria-hidden="true"></i>
+                    </div>
+                    <div class="text-center">
+                        <h3>We care for you</h3>
+                    </div>
+                    <div>
+                        {% for care in  home_care %}
+                            <p>{{ care.home_care_paragraph }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="fa-container">
+                        <i class="fa fa-bell-o fa-3x" aria-hidden="true"></i>
+                    </div>
+                    <div class="text-center">
+                        <h3>We'll be on time</h3>
+                    </div>
+                    <div>
+                        {% for time in  home_ontime %}
+                            <p>{{ time.home_ontime_paragraph }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+
+            </div>
+    </div>
+</div>
+
+<div class="section-container">
+    <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+
+
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <img class="img-responsive" src="{% static 'img/images/img-05.jpg' %}" alt="First slide">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive" src="{% static 'img/images/img-07.jpg' %}" alt="Second slide">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive" src="{% static 'img/images/img-08.jpg' %}" alt="Third slide">
+                            </div>
+                        </div>
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                    </div>
+
+
+                </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="section-container background-color-container white-text-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="text-center">
+                    <h2>Our Vision</h2>
+                    {% for vision in  home_vision %}
+                        <p>{{ vision.vision_paragraph }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+     </div>
+ </div>
+
+ <div class="section-container">
+    <div class="container">
+        <div class="row">                   
+            <div class="col-md-7">
+                <img class="img-responsive" src="{% static 'img/images/img-06.png' %}" alt="pic-bottom">
+            </div>
+
+            <div class="col-md-5">
+                <ul class="features">
+                    <li>
+                        <h3>Call and book</h3>
+                        <p>We are one call away, reach us anytime to schedule your visit.
+                        </p>
+                    </li>
+                    <li>
+                        <h3>Visit us</h3>
+                        <p>Visit the clinic for your medical concerns, we are welcome to help you.
+                        </p>
+                    </li>
+                    <li>
+                        <h3>Safety well-assured</h3>
+                        <p>Our proven years of experience can guarantee your medical satisfaction and safety.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        
+
+              
+            <div class="row">
+                <div class="col-md-4">
+                        <img class="img-responsive page-base-image" src="./assets/images/logo-01.png" alt="">
+
+                </div>
+                <div class="col-md-4">
+                        <img class="img-responsive page-base-image" src="./assets/images/logo-02.png" alt="">
+                </div>
+                <div class="col-md-4">
+                        <img class="img-responsive page-base-image" src="./assets/images/logo-03.png" alt="">
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+{% endblock %}

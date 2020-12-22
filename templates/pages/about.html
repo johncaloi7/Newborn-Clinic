@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<div class="">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-xs-12">
+               <img class="img-responsive" src="{% static 'img/images/img-01.jpg' %}">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section-container">
+    <div class="container">
+        <div class="row">
+               <div class="col-xs-12 col-md-8 col-md-offset-2">
+                    <div class="text-center">
+                    <h1>About us</h1>
+                     </div> 
+                        {% for first_par in parag_one %}  
+                            <p class="section-container-spacer">
+                                {{ first_par.about_first_paragraph }}
+                            </p>
+                        {% endfor %}
+                    <div class="row section-container-spacer">
+                        <div class="col-md-6">
+                            <img class="img-responsive" src="{% static 'img/images/img-03.jpg' %}">
+                        </div>
+                        <div class="col-md-6">
+                            <img class="img-responsive" src="{% static 'img/images/img-02.jpg' %}">
+                        </div>
+                    </div>
+
+               </div>
+               
+                <div class="col-xs-12 col-md-8 col-md-offset-2">
+                        {% for second_par in parag_two %}
+                            <p>{{ second_par.about_second_paragraph }}</p>
+                        {% endfor %}
+                            <small class="signature pull-right">Newborn Team</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="description" name="description">
+  <meta name="google" content="notranslate" />
+  <meta content="Mashup templates have been developped by Orson.io team" name="author">
+
+  <!-- Disable tap highlight on IE -->
+  <!-- <meta name="msapplication-tap-highlight" content="no">
+  <link href="./assets/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="./assets/favicon.ico" rel="icon">
+
+  -->
+
+    <title> Newborn | {% block title %} Home {% endblock %}</title>  
+    <link rel="icon" href="{% static 'img/newborn.ico' %}">
+    <link href="{% static 'css/main.a3f694c0.css' %}" rel="stylesheet">
+</head>
+<body>
+
+    {% include 'includes/navbar.html' %} 
+
+    {% block content %} 
+    
+    
+    {% endblock %}
+
+
+    {% include 'includes/footer.html' %}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+<script>
+    setTimeout(function(){
+    $('#message').fadeOut('slow');
+    }, 4000)          
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+    navActivePage();
+  });
+</script>
+
+<script type="text/javascript" src="{% static 'js/main.41beeca9.js' %}"></script>
+
+</body>
+</html>

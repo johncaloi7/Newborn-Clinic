@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load humanize %}
+<div class="section-container">
+    <div class="container">
+        <div class="row section-container-spacer">
+            <div class="col-xs-12">
+                <div class="text-center">
+                    <h1>Medical Services</h1>
+                </div>
+                <div class="col-md-8 col-md-offset-2">
+                    <p>These are the common medical services sought by our patients. We do offer more medical services, just
+                    reach us thru email or via phone call for more information. We would be more than glad to help and provide your needs. 
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            {% for service in featured_service %}
+                <div class="col-md-4">
+                    <div class="pricing-card pricing-primary">
+                        <h3>{{ service.service_title }}</h3>
+                        <h6 class="price">{{ service.price | intcomma }} <span>Pesos</span></h6>
+                    </div>
+                    <div class="pricing-features">
+                        <ul class="features">
+                            {% if service.inclusion_one %}
+                                <li>{{ service.inclusion_one }}</li>
+                            {% endif %}
+                            {% if service.inclusion_two %}
+                                <li>{{ service.inclusion_two }}</li>
+                            {% endif %}
+                            {% if service.inclusion_three %}
+                                <li>{{ service.inclusion_three }}</li>
+                            {% endif %}
+                            {% if service.inclusion_four %}
+                                <li>{{ service.inclusion_four }}</li>
+                            {% endif %}
+                            {% if service.inclusion_five %}
+                                <li>{{ service.inclusion_six }}</li>
+                            {% endif %}
+                            {% if service.inclusion_six %}
+                                <li>{{ service.inclusion_six }}</li>
+                            {% endif %}
+                            {% if service.inclusion_seven %}
+                                <li>{{ service.inclusion_seven }}</li>
+                            {% endif %}
+                            {% if service.inclusion_eight %}
+                                <li>{{ service.inclusion_eight }}</li>
+                            {% endif %}
+                        </ul>
+                        <a href="{% url 'contact' %}" class="btn btn-primary" title="">Message Us</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</div>  
+
+{% endblock%}
